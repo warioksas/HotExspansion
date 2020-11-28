@@ -9,11 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KTUHot">
-        <activity android:name=".Shop"></activity>
-        <activity android:name=".Settings" />
-        <activity android:name=".Leaderboard" />
-        <activity android:name=".Help" />
-        <activity android:name=".Game" />
+        <activity android:name=".AboutAppAcitvity"></activity>
+        <activity android:name=".AboutMaterialsActivity" />
+        <activity android:name=".CalculatorActivity" />
+        <activity android:name=".GameActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
