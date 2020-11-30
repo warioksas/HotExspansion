@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
@@ -10,8 +9,8 @@
 
     <TextView
         android:id="@+id/Laikas"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
+        android:layout_width="172dp"
+        android:layout_height="48dp"
         android:layout_marginTop="15dp"
         android:text="00:00"
         android:textAlignment="center"
@@ -26,6 +25,9 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="379dp"
         android:layout_height="40dp"
+        android:max="100"
+        android:progress="45"
+        android:progressTint="#FF0909"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,6 +95,21 @@
         app:layout_constraintTop_toBottomOf="@+id/progressBar"
         app:srcCompat="@drawable/maxcircle" />
 
+    <ImageView
+
+        android:id="@+id/MinCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="101dp"
+        app:layout_constraintBottom_toTopOf="@+id/fire"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:srcCompat="@drawable/maxcircle" />
+
     <TextView
         android:id="@+id/raudonas"
         android:layout_width="wrap_content"
@@ -107,11 +124,14 @@
         android:id="@+id/judantis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="81dp"
-        android:layout_marginBottom="181dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="184dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/zalias" />
+        app:layout_constraintEnd_toStartOf="@+id/zalias"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/raudonas"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/zalias"
@@ -122,5 +142,28 @@
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/fire"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/rez"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="61dp"
+        android:layout_marginBottom="100dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/judantis" />
+
+    <Button
+        android:id="@+id/Žaisti"
+        android:layout_width="131dp"
+        android:layout_height="86dp"
+        android:text="Žaisti"
+        app:layout_constraintBottom_toTopOf="@+id/boundaryView"
+        app:layout_constraintEnd_toStartOf="@+id/boundaryView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/boundaryView"
+        app:layout_constraintTop_toBottomOf="@+id/boundaryView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
