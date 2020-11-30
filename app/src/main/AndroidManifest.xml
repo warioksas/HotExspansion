@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KTUHot">
-        <activity android:name=".AboutAppAcitvity"></activity>
+        <activity android:name=".Nustatymai"></activity>
+        <activity android:name=".AboutAppAcitvity" />
         <activity android:name=".AboutMaterialsActivity" />
         <activity android:name=".CalculatorActivity" />
         <activity android:name=".GameActivity" />

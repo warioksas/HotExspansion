@@ -26,7 +26,7 @@
         android:layout_width="379dp"
         android:layout_height="40dp"
         android:max="100"
-        android:progress="45"
+        android:progress="0"
         android:progressTint="#FF0909"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -110,60 +110,43 @@
         app:layout_constraintTop_toBottomOf="@+id/progressBar"
         app:srcCompat="@drawable/maxcircle" />
 
-    <TextView
-        android:id="@+id/raudonas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="88dp"
-        android:layout_marginBottom="51dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/cold"
-        app:layout_constraintEnd_toStartOf="@+id/judantis" />
-
-    <TextView
-        android:id="@+id/judantis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="184dp"
-        android:text="TextView"
+    <Button
+        android:id="@+id/Žaisti"
+        android:layout_width="228dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="644dp"
+        android:background="@drawable/rounded"
+        android:text="Žaisti"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/zalias"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/raudonas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/zalias"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="43dp"
-        android:layout_marginBottom="51dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/fire"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:id="@+id/LVL"
+        android:layout_width="86dp"
+        android:layout_height="46dp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeMinTextSize="12sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/rez"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="61dp"
-        android:layout_marginBottom="100dp"
-        android:text="TextView"
+        android:id="@+id/Rezultatas"
+        android:layout_width="410dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="160dp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeMinTextSize="12sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/judantis" />
-
-    <Button
-        android:id="@+id/Žaisti"
-        android:layout_width="131dp"
-        android:layout_height="86dp"
-        android:text="Žaisti"
-        app:layout_constraintBottom_toTopOf="@+id/boundaryView"
-        app:layout_constraintEnd_toStartOf="@+id/boundaryView"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/boundaryView"
-        app:layout_constraintTop_toBottomOf="@+id/boundaryView" />
+        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

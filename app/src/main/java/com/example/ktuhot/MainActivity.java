@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent;
         switch(v.getId()) {
             case R.id.game:
-                intent = new Intent(this, GameActivity.class);
+                intent = new Intent(this,Nustatymai.class);
                 startActivity(intent);
                 break;
             case R.id.aboutApp:
