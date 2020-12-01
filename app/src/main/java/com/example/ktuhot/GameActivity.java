@@ -1,8 +1,11 @@
 package com.example.ktuhot;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.animation.ObjectAnimator;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -14,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -26,36 +30,18 @@ import java.util.Random;
 public class GameActivity extends AppCompatActivity  implements View.OnTouchListener {
 
     Random random = new Random();
-    ImageView fire;
-    ImageView cold;
-    ImageView zW;
-    ImageView bW;
-    ImageView sW;
-    ImageView iW;
-    TextView laikrodis;
-    TextView Rez;
-    TextView Lvl;
-    private CountDownTimer mCountDownTimer ;
+    ImageView fire, cold, zW, bW, sW, iW;
+    TextView laikrodis, Lvl;
+    private CountDownTimer mCountDownTimer;
     private boolean mTimerRunning;
-    int N = 10000;
-    int Laikas;
-    int lv = 1;
-
-    int didejimokof=3;
-    int tikslumas = 150;
-    int Mazejimaslaiko = 100;
+    int N = 10000, Laikas, lv = 1, didejimokof=3, tikslumas = 150, Mazejimaslaiko = 100;
 
     private int rezultatas = 0;
     private long mTimeLeftInMillis = N;
     Button zaisti;
     ProgressBar progresbar;
     ObjectAnimator objanim;
-    // Spinner listas;
-
-    // List<String> Medziagos = new ArrayList<>();
     List<Integer> kofai = new ArrayList<>();
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,46 +58,50 @@ public class GameActivity extends AppCompatActivity  implements View.OnTouchList
         laikrodis  = findViewById(R.id.Laikas);
         zaisti =findViewById(R.id.Žaisti);
         Lvl = findViewById(R.id.LVL);
-        Rez = findViewById(R.id.Rezultatas);
-        // listas = findViewById(R.id.spinner);
-        // Medziagos.add("Pasirinkite medziaga ");
         kofai.add(4);
-        //  Medziagos.add("Deimantas");
         kofai.add(1);
-        //  Medziagos.add("Betonas");
         kofai.add(12);
-        // Medziagos.add("Auksas");
         kofai.add(14);
-        //  Medziagos.add("Varis");
         kofai.add(16);
-        // Medziagos.add("Stiklas");
         kofai.add(8);
-        //  Medziagos.add("politelenas");
-        kofai.add(200);
-
-      /*  ArrayAdapter<String>  medadapter = new ArrayAdapter<String>(GameActivity.this,R.layout.support_simple_spinner_dropdown_item, Medziagos);
-        medadapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
-        listas.setAdapter(medadapter);
-
-*/
 
         fire.setOnTouchListener(GameActivity.this);
         cold.setOnTouchListener(GameActivity.this);
         zaisti.setOnTouchListener(GameActivity.this);
 
-        iW.setVisibility(View.GONE);
-        zW.setVisibility(View.GONE);
-        sW.setVisibility(View.GONE);
-        bW.setVisibility(View.GONE);
+        hideCircles();
         Lvl.setVisibility(View.GONE);
-        Rez.setVisibility(View.VISIBLE);
-
-
 
         int insId = getIntent().getIntExtra("Kelintas", 0);
         Laikas = getIntent().getIntExtra("Laikas", 0);
         N = Laikas;
         didejimokof = kofai.get(insId);
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(GameActivity.this);
+        builder.setTitle("Ar norite palikti žaidimą?");
+        builder.setCancelable(true);
+        builder.setPositiveButton(
+                "Taip",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        mCountDownTimer.cancel();
+                        mCountDownTimer = null;
+                        Intent myIntent = new Intent(GameActivity.this, GameSettingsActivity.class);
+                        GameActivity.this.startActivity(myIntent);
+                        GameActivity.this.finish();
+                    }
+                });
+        builder.setNegativeButton(
+                "Ne",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     private void startTimer() {
@@ -127,7 +117,6 @@ public class GameActivity extends AppCompatActivity  implements View.OnTouchList
             public void onFinish() {
 
                 int score = Math.abs(iW.getLayoutParams().height - bW.getLayoutParams().height);
-
                 if(score <= tikslumas) {
 
                     N = N-  (int)(1000 * (score/tikslumas*1.00))+50;
@@ -136,32 +125,46 @@ public class GameActivity extends AppCompatActivity  implements View.OnTouchList
                     startTimer();// laikmacio paleidimas sekanciam runui
                     objanim.setDuration(N);
                     objanim.start();// animacija progres baro
-                    int size = random.nextInt(900) + 100;
-
+                    int size = random.nextInt(800) + tikslumas + 50;
                     bW.getLayoutParams().height = size;
                     bW.getLayoutParams().width = size;
                     sW.getLayoutParams().height = size - tikslumas;
                     sW.getLayoutParams().width = size - tikslumas;
                     zW.getLayoutParams().height = size + tikslumas;
                     zW.getLayoutParams().width = size + tikslumas;
+                    hideCircles();
+                    showCircles();
                     lv++;
-                    Lvl.setText("LVL : "+String.valueOf(lv));
-                    if (tikslumas >=50  ){tikslumas = (int)(tikslumas * 0.8);}
-
+                    Lvl.setText("Lygis : "+String.valueOf(lv));
+                    if (tikslumas >=50)
+                    {
+                        tikslumas = (int)(tikslumas * 0.8);
+                    }
+                    Lvl.setVisibility(View.VISIBLE);
                 }
                 else {
-                    Rez.setVisibility(View.VISIBLE);
-                    Rez.setText("Rezultatas : "+String.valueOf(rezultatas) );
-                    laikrodis.setText("Game Over");
-                    zaisti.setText("Play Again");
+                    laikrodis.setText("00:00:000");
                     zaisti.setVisibility(View.VISIBLE);
+                    Lvl.setVisibility(View.GONE);
                     mTimerRunning = false;
+                    AlertDialog.Builder builder = new AlertDialog.Builder(GameActivity.this);
+                    builder.setTitle("Žaidimo pabaiga!");
+                    builder.setMessage("Žaidimo metu surinkta taškų: " +String.valueOf(rezultatas) +
+                            "\nPasiektas lygmuo: " + lv +
+                            "\nGalite pradėti žaidimą iš naujo!");
+                    builder.setCancelable(true);
+                    builder.setPositiveButton(
+                            "Gerai",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                }
+                            });
+                    AlertDialog alert = builder.create();
+                    alert.show();
                 }
             }
 
         }.start();
-
-
     }
 
     private void updateCountDownText() {
@@ -179,19 +182,16 @@ public class GameActivity extends AppCompatActivity  implements View.OnTouchList
             case R.id.Žaisti:
                 if (event.getAction() == MotionEvent.ACTION_UP)
                 {
-                    N =Laikas;
+                    N = Laikas;
                     mTimeLeftInMillis = N;
                     rezultatas = 0;
-
                     lv = 1;
-
-                    // didejimokof=3;
                     tikslumas = 150;
                     objanim = ObjectAnimator.ofInt(progresbar, "progress", 0, 100);
                     objanim.setDuration(N);
                     startTimer();
                     objanim.start();
-                    int size = random.nextInt(900) + 200;
+                    int size = random.nextInt(800) + tikslumas + 50;
                     iW.getLayoutParams().height = 300;
                     iW.getLayoutParams().width = 300;
                     bW.getLayoutParams().height = size;
@@ -201,15 +201,9 @@ public class GameActivity extends AppCompatActivity  implements View.OnTouchList
                     zW.getLayoutParams().height = size + tikslumas;
                     zW.getLayoutParams().width = size + tikslumas;
                     zaisti.setVisibility(View.GONE);
-                    iW.setVisibility(View.VISIBLE);
-                    zW.setVisibility(View.VISIBLE);
-                    sW.setVisibility(View.VISIBLE);
-                    bW.setVisibility(View.VISIBLE);
+                    showCircles();
                     Lvl.setVisibility(View.VISIBLE);
-                    Rez.setVisibility(View.GONE);
-                    Lvl.setText("LVL 1");
-                    //  int Kelintas  = (int)listas.getSelectedItemId();
-                    //   didejimokof = kofai.get(Kelintas);
+                    Lvl.setText("Lygis: 1");
                 }
                 break;
             case R.id.fire:
@@ -217,20 +211,32 @@ public class GameActivity extends AppCompatActivity  implements View.OnTouchList
                 if (1000 >= iW.getHeight() + didejimokof && mTimerRunning) {
                     iW.getLayoutParams().height = iW.getHeight() + didejimokof;
                     iW.getLayoutParams().width = iW.getWidth() + didejimokof;
-                    //judantis.setText(String.valueOf(iW.getLayoutParams().height));
                 }
                 break;
             case R.id.cold:
-                if (iW.getHeight() - 50 >= 50 &&mTimerRunning) {
+                if (iW.getHeight() - didejimokof >= 50 + tikslumas && mTimerRunning) {
                     iW.getLayoutParams().height = iW.getHeight() - didejimokof;
                     iW.getLayoutParams().width = iW.getWidth() - didejimokof;
-                    //judantis.setText(String.valueOf(iW.getLayoutParams().height));
                 }
                 break;
-
-
         }
         return true;
     }
 
+    private void hideCircles()
+    {
+        iW.setVisibility(View.GONE);
+        zW.setVisibility(View.GONE);
+        sW.setVisibility(View.GONE);
+        bW.setVisibility(View.GONE);
+        Lvl.setVisibility(View.GONE);
+    }
+
+    private void showCircles()
+    {
+        iW.setVisibility(View.VISIBLE);
+        zW.setVisibility(View.VISIBLE);
+        sW.setVisibility(View.VISIBLE);
+        bW.setVisibility(View.VISIBLE);
+    }
 }

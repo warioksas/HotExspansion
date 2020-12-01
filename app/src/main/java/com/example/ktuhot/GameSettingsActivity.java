@@ -1,7 +1,9 @@
 package com.example.ktuhot;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -25,32 +27,32 @@ public class GameSettingsActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gamesettings);
         getSupportActionBar().hide();
-        listas = findViewById(R.id.spinner2);
+        listas = findViewById(R.id.spinner);
         slide = findViewById(R.id.seekBar);
-
         Medziagos.add("Volframas");
         Medziagos.add("Deimantas");
         Medziagos.add("Betonas");
         Medziagos.add("Auksas");
         Medziagos.add("Varis");
         Medziagos.add("Stiklas");
-        Medziagos.add("politelenas");
-        ArrayAdapter<String> medadapter = new ArrayAdapter<String>(GameSettingsActivity.this,R.layout.support_simple_spinner_dropdown_item, Medziagos);
-        medadapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        ArrayAdapter<String> medadapter = new ArrayAdapter<String>(this, R.layout.spinner_item, Medziagos);
+        medadapter.setDropDownViewResource(R.layout.dropdown_item);
         listas.setAdapter(medadapter);
         Button b1 = (Button) findViewById(R.id.Go);
         b1.setOnClickListener(this);
-        // b1.setText(
-        //      listas.getSelectedItemPosition());
+    }
 
-
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(GameSettingsActivity.this, MainActivity.class);
+        this.startActivity(myIntent);
     }
 
     public void onClick(View v) {
         Intent intent;
         intent = new Intent(this,GameActivity.class);
         int Kelintas  = listas.getSelectedItemPosition();
-        int laikas = slide.getProgress()+3000;
+        int laikas = 10000 - slide.getProgress() + 3000;
         intent.putExtra("Kelintas",Kelintas);
         intent.putExtra("Laikas",laikas);
         startActivity(intent);

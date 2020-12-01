@@ -13,9 +13,8 @@ import java.util.Locale;
 
 public class CalculatorActivity extends AppCompatActivity {
 
-
     Button skaiciuoti;
-    TextView Koficient;
+    TextView koficient;
     EditText ilgis1;
     EditText ilgis2;
     EditText t1;
@@ -32,7 +31,7 @@ public class CalculatorActivity extends AppCompatActivity {
         ilgis2 =findViewById(R.id.NaujasIlgis);
         t2 = findViewById(R.id.NaujaT);
         skaiciuoti =findViewById(R.id.Skaičiuoti);
-        Koficient = findViewById(R.id.Kof);
+        koficient = findViewById(R.id.Kof);
 
         skaiciuoti.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,8 +39,9 @@ public class CalculatorActivity extends AppCompatActivity {
                 double il1,il2;
                 double temp1,temp2;
 
-                if(ilgis1.getText().length() ==0 ||ilgis2.getText().length() ==0 ||t1.getText().length() ==0 ||t1.getText().length() ==0 )
-                { Koficient.setText("Ivesti duomenys klaidingi!!!");}
+                if(ilgis1.getText().length() ==0 || ilgis2.getText().length() ==0 || t1.getText().length() ==0 || t1.getText().length() ==0)
+                {                    koficient.setText("Užpildykite visus laukelius!");
+                }
                 else {
                     il1 = Double.parseDouble(String.valueOf(ilgis1.getText()));
                     il2 = Double.parseDouble(String.valueOf(ilgis2.getText()));
@@ -54,9 +54,9 @@ public class CalculatorActivity extends AppCompatActivity {
 
                     double kof = ld / (il1 * td);
                     if (ld == 0 || td == 0) {
-                        Koficient.setText("Ivesti duomenys klaidingi!!!");
+                        koficient.setText("Neteisingai įvesti duomenys!");
                     } else {
-                        Koficient.setText("Gautas kietojo kūno augimo \n koficientas:" + formatInScientificNotation(kof) + " M/M*" + '\u2103');
+                        koficient.setText(formatInScientificNotation(kof) + " m/m * " + '\u2103');
                     }
                 }
             }
@@ -103,7 +103,6 @@ public class CalculatorActivity extends AppCompatActivity {
                     break;
             }
         }
-
         return s.toString();
     }
 }

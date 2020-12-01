@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         b5.setOnClickListener(this);
     }
 
-    //implement the onClick method here
     public void onClick(View v) {
         Intent intent;
         switch(v.getId()) {
@@ -47,5 +46,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 }

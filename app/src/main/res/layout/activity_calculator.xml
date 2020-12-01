@@ -7,109 +7,191 @@
     android:background="@drawable/background"
     tools:context=".CalculatorActivity">
 
-    <EditText
-        android:id="@+id/pirminisilgis"
-        android:layout_width="201dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="244dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="165dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="125dp"
+        android:text="Rezultatas"
+        android:textAlignment="center"
+        android:textColor="#242810"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NaujaT" />
+
+    <TextView
+        android:id="@+id/activityName2"
+        android:layout_width="230dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Koeficiento\nskaičiuoklė"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/pirminisilgis"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="155dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="#242810"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
         android:id="@+id/NaujasIlgis"
-        android:layout_width="203dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="68dp"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="150dp"
         android:ems="10"
         android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="#242810"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pirminisilgis" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
         android:id="@+id/pirmineT"
-        android:layout_width="133dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="244dp"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="155dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/pirminisilgis"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textAlignment="center"
+        android:textColor="#242810"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
         android:id="@+id/NaujaT"
-        android:layout_width="126dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="68dp"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="155dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/NaujasIlgis"
-        app:layout_constraintTop_toBottomOf="@+id/pirmineT" />
+        android:textAlignment="center"
+        android:textColor="#242810"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/Kof"
-        android:layout_width="341dp"
-        android:layout_height="101dp"
-        android:layout_marginTop="64dp"
-        android:text="Koficientas :"
+        android:layout_width="181dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="115dp"
         android:autoSizeMaxTextSize="100sp"
         android:autoSizeMinTextSize="12sp"
         android:autoSizeStepGranularity="2sp"
         android:autoSizeTextType="uniform"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.418"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/Skaičiuoti"
-        android:layout_width="191dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="76dp"
+        android:layout_width="179dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/rounded"
         android:text="Skaičiuoti"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Kof" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="139dp"
-        android:layout_height="31dp"
-        android:layout_marginBottom="8dp"
-        android:text=" Pradinis ilgis M"
-        app:layout_constraintBottom_toTopOf="@+id/pirminisilgis"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_width="200dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="105dp"
+        android:text=" Pradinis ilgis, m"
+        android:textAlignment="center"
+        android:textColor="#242810"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityName2" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="139dp"
-        android:layout_height="31dp"
-        android:layout_marginBottom="8dp"
-        android:text=" Galutinis  ilgis M"
-        app:layout_constraintBottom_toTopOf="@+id/NaujasIlgis"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_width="200dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="105dp"
+        android:text=" Galutinis ilgis, m"
+        android:textAlignment="center"
+        android:textColor="#242810"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pirmineT" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="193dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:text="Pradinė kūno temperatūra C"
-        app:layout_constraintBottom_toTopOf="@+id/pirmineT"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_width="277dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="65dp"
+        android:text="Pradinė kūno temperatūra, \u2103"
+        android:textAlignment="center"
+        android:textColor="#242810"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pirminisilgis" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="193dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Galutinė kūno temperatūra C"
-        app:layout_constraintBottom_toTopOf="@+id/NaujaT"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_width="277dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="67dp"
+        android:text="Galutinė kūno temperatūra, \u2103"
+        android:textAlignment="center"
+        android:textColor="#242810"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NaujasIlgis" />
 </androidx.constraintlayout.widget.ConstraintLayout>
