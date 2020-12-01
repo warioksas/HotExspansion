@@ -39,7 +39,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 double il1,il2;
                 double temp1,temp2;
 
-                if(ilgis1.getText().length() ==0 || ilgis2.getText().length() ==0 || t1.getText().length() ==0 || t1.getText().length() ==0)
+                if(ilgis1.getText().length() == 0 || ilgis2.getText().length() == 0 || t1.getText().length() == 0 || t2.getText().length() == 0)
                 {                    koficient.setText("Užpildykite visus laukelius!");
                 }
                 else {
@@ -47,7 +47,6 @@ public class CalculatorActivity extends AppCompatActivity {
                     il2 = Double.parseDouble(String.valueOf(ilgis2.getText()));
                     temp1 = Double.parseDouble(String.valueOf(t1.getText()));
                     temp2 = Double.parseDouble(String.valueOf(t2.getText()));
-
 
                     double ld = Math.abs(il2 - il1);
                     double td = Math.abs(temp2 - temp1);
