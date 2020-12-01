@@ -80,7 +80,7 @@
         android:layout_width="139dp"
         android:layout_height="31dp"
         android:layout_marginBottom="8dp"
-        android:text=" Pradinis ilgis mm "
+        android:text=" Pradinis ilgis M"
         app:layout_constraintBottom_toTopOf="@+id/pirminisilgis"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -89,7 +89,7 @@
         android:layout_width="139dp"
         android:layout_height="31dp"
         android:layout_marginBottom="8dp"
-        android:text=" Galutinis  ilgis mm "
+        android:text=" Galutinis  ilgis M"
         app:layout_constraintBottom_toTopOf="@+id/NaujasIlgis"
         app:layout_constraintStart_toStartOf="parent" />
 
