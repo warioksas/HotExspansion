@@ -7,26 +7,109 @@
     android:background="@drawable/background"
     tools:context=".CalculatorActivity">
 
+    <EditText
+        android:id="@+id/pirminisilgis"
+        android:layout_width="201dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="244dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/NaujasIlgis"
+        android:layout_width="203dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="68dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pirminisilgis" />
+
+    <EditText
+        android:id="@+id/pirmineT"
+        android:layout_width="133dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="244dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/pirminisilgis"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/NaujaT"
+        android:layout_width="126dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="68dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/NaujasIlgis"
+        app:layout_constraintTop_toBottomOf="@+id/pirmineT" />
+
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="308dp"
-        android:layout_height="539dp"
-        android:text="aprasymas kaip zaisti"
+        android:id="@+id/Kof"
+        android:layout_width="341dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="64dp"
+        android:text="Koficientas :"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeMinTextSize="12sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.418"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Skaičiuoti"
+        android:layout_width="191dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="76dp"
+        android:background="@drawable/rounded"
+        android:text="Skaičiuoti"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.604" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="139dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="8dp"
+        android:text=" Pradinis ilgis mm "
+        app:layout_constraintBottom_toTopOf="@+id/pirminisilgis"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="139dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="8dp"
+        android:text=" Galutinis  ilgis mm "
+        app:layout_constraintBottom_toTopOf="@+id/NaujasIlgis"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Kaip žaisti"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="193dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Pradinė kūno temperatūra C"
+        app:layout_constraintBottom_toTopOf="@+id/pirmineT"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="193dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Galutinė kūno temperatūra C"
+        app:layout_constraintBottom_toTopOf="@+id/NaujaT"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
