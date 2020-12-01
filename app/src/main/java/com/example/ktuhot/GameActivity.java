@@ -50,7 +50,7 @@ public class GameActivity extends AppCompatActivity  implements View.OnTouchList
     Button zaisti;
     ProgressBar progresbar;
     ObjectAnimator objanim;
-   // Spinner listas;
+    // Spinner listas;
 
     // List<String> Medziagos = new ArrayList<>();
     List<Integer> kofai = new ArrayList<>();
@@ -73,20 +73,20 @@ public class GameActivity extends AppCompatActivity  implements View.OnTouchList
         zaisti =findViewById(R.id.Žaisti);
         Lvl = findViewById(R.id.LVL);
         Rez = findViewById(R.id.Rezultatas);
-       // listas = findViewById(R.id.spinner);
-       // Medziagos.add("Pasirinkite medziaga ");
+        // listas = findViewById(R.id.spinner);
+        // Medziagos.add("Pasirinkite medziaga ");
         kofai.add(4);
-      //  Medziagos.add("Deimantas");
+        //  Medziagos.add("Deimantas");
         kofai.add(1);
-      //  Medziagos.add("Betonas");
+        //  Medziagos.add("Betonas");
         kofai.add(12);
-       // Medziagos.add("Auksas");
+        // Medziagos.add("Auksas");
         kofai.add(14);
-      //  Medziagos.add("Varis");
+        //  Medziagos.add("Varis");
         kofai.add(16);
-       // Medziagos.add("Stiklas");
+        // Medziagos.add("Stiklas");
         kofai.add(8);
-      //  Medziagos.add("politelenas");
+        //  Medziagos.add("politelenas");
         kofai.add(200);
 
       /*  ArrayAdapter<String>  medadapter = new ArrayAdapter<String>(GameActivity.this,R.layout.support_simple_spinner_dropdown_item, Medziagos);
@@ -112,10 +112,6 @@ public class GameActivity extends AppCompatActivity  implements View.OnTouchList
         Laikas = getIntent().getIntExtra("Laikas", 0);
         N = Laikas;
         didejimokof = kofai.get(insId);
-
-
-
-
     }
 
     private void startTimer() {
@@ -187,24 +183,24 @@ public class GameActivity extends AppCompatActivity  implements View.OnTouchList
                     mTimeLeftInMillis = N;
                     rezultatas = 0;
 
-                     lv = 1;
+                    lv = 1;
 
                     // didejimokof=3;
-                     tikslumas = 150;
+                    tikslumas = 150;
                     objanim = ObjectAnimator.ofInt(progresbar, "progress", 0, 100);
-                objanim.setDuration(N);
-                startTimer();
-                objanim.start();
-                int size = random.nextInt(900) + 200;
-                iW.getLayoutParams().height = 300;
-                iW.getLayoutParams().width = 300;
-                bW.getLayoutParams().height = size;
-                bW.getLayoutParams().width = size;
-                sW.getLayoutParams().height = size - tikslumas;
-                sW.getLayoutParams().width = size - tikslumas;
-                zW.getLayoutParams().height = size + tikslumas;
-                zW.getLayoutParams().width = size + tikslumas;
-                zaisti.setVisibility(View.GONE);
+                    objanim.setDuration(N);
+                    startTimer();
+                    objanim.start();
+                    int size = random.nextInt(900) + 200;
+                    iW.getLayoutParams().height = 300;
+                    iW.getLayoutParams().width = 300;
+                    bW.getLayoutParams().height = size;
+                    bW.getLayoutParams().width = size;
+                    sW.getLayoutParams().height = size - tikslumas;
+                    sW.getLayoutParams().width = size - tikslumas;
+                    zW.getLayoutParams().height = size + tikslumas;
+                    zW.getLayoutParams().width = size + tikslumas;
+                    zaisti.setVisibility(View.GONE);
                     iW.setVisibility(View.VISIBLE);
                     zW.setVisibility(View.VISIBLE);
                     sW.setVisibility(View.VISIBLE);
@@ -212,9 +208,9 @@ public class GameActivity extends AppCompatActivity  implements View.OnTouchList
                     Lvl.setVisibility(View.VISIBLE);
                     Rez.setVisibility(View.GONE);
                     Lvl.setText("LVL 1");
-                  //  int Kelintas  = (int)listas.getSelectedItemId();
-                 //   didejimokof = kofai.get(Kelintas);
-                  }
+                    //  int Kelintas  = (int)listas.getSelectedItemId();
+                    //   didejimokof = kofai.get(Kelintas);
+                }
                 break;
             case R.id.fire:
 
@@ -234,7 +230,7 @@ public class GameActivity extends AppCompatActivity  implements View.OnTouchList
 
 
         }
-     return true;
+        return true;
     }
 
 }

@@ -7,28 +7,36 @@
     android:background="@drawable/background"
     tools:context=".AboutMaterialsActivity">
 
-
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="329dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="36dp"
-        android:text="Top 25 "
+        android:id="@+id/activityName"
+        android:layout_width="305dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="53dp"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeMinTextSize="12sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="sans-serif-black"
+        android:text="Informacija apie\nmedžiagas"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ListView
-        android:id="@+id/listview_1"
-        android:layout_width="406dp"
-        android:layout_height="734dp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="371dp"
+        android:layout_height="601dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/border"
+        android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
+        app:layout_constraintTop_toBottomOf="@+id/activityName" />
 </androidx.constraintlayout.widget.ConstraintLayout>
