@@ -40,17 +40,25 @@ public class CalculatorActivity extends AppCompatActivity {
                 double il1,il2;
                 double temp1,temp2;
 
-                il1 = Double.parseDouble(String.valueOf(ilgis1.getText()));
-                il2 = Double.parseDouble(String.valueOf(ilgis2.getText()));
-                temp1 = Double.parseDouble(String.valueOf(t1.getText()));
-                temp2 = Double.parseDouble(String.valueOf(t2.getText()));
+                if(ilgis1.getText().length() ==0 ||ilgis2.getText().length() ==0 ||t1.getText().length() ==0 ||t1.getText().length() ==0 )
+                { Koficient.setText("Ivesti duomenys klaidingi!!!");}
+                else {
+                    il1 = Double.parseDouble(String.valueOf(ilgis1.getText()));
+                    il2 = Double.parseDouble(String.valueOf(ilgis2.getText()));
+                    temp1 = Double.parseDouble(String.valueOf(t1.getText()));
+                    temp2 = Double.parseDouble(String.valueOf(t2.getText()));
 
-                double ld =  Math.abs(il2-il1);
-                double td = Math.abs(temp2-temp1);
 
-                double kof = ld/(il1*td);
+                    double ld = Math.abs(il2 - il1);
+                    double td = Math.abs(temp2 - temp1);
 
-                Koficient.setText("Gautas kietojo kūno augimo \n koficientas:"+formatInScientificNotation(kof)+" M/M*"+'\u2103');
+                    double kof = ld / (il1 * td);
+                    if (ld == 0 || td == 0) {
+                        Koficient.setText("Ivesti duomenys klaidingi!!!");
+                    } else {
+                        Koficient.setText("Gautas kietojo kūno augimo \n koficientas:" + formatInScientificNotation(kof) + " M/M*" + '\u2103');
+                    }
+                }
             }
         });
 
