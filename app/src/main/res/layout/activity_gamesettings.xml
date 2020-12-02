@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:visibility="visible"
-    tools:context=".GameSettingsActivity">
+    tools:context="lt.ktu.ktuhot.GameSettingsActivity">
 
     <TextView
         android:id="@+id/activityName"
@@ -36,7 +36,7 @@
         android:background="@drawable/layout_border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectMaterial" />
+        app:layout_constraintTop_toBottomOf="@+id/developers" />
 
     <Button
         android:id="@+id/Go"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/selectSeed" />
 
     <TextView
-        android:id="@+id/selectMaterial"
+        android:id="@+id/developers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"

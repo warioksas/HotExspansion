@@ -1,4 +1,4 @@
-package com.example.ktuhot;
+package lt.ktu.ktuhot;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -39,8 +39,10 @@ public class CalculatorActivity extends AppCompatActivity {
                 double il1,il2;
                 double temp1,temp2;
 
-                if(ilgis1.getText().length() == 0 || ilgis2.getText().length() == 0 || t1.getText().length() == 0 || t2.getText().length() == 0)
-                {                    koficient.setText("Užpildykite visus laukelius!");
+                if(ilgis1.getText().length() == 0 || ilgis2.getText().length() == 0 ||
+                        t1.getText().length() == 0 || t2.getText().length() == 0)
+                {
+                    koficient.setText("Užpildykite visus laukelius!");
                 }
                 else {
                     il1 = Double.parseDouble(String.valueOf(ilgis1.getText()));

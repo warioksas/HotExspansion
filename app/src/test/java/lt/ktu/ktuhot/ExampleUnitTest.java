@@ -1,4 +1,4 @@
-package com.example.ktuhot;
+package lt.ktu.ktuhot;
 
 import org.junit.Test;
 
